@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* 
+DEFINE BASE COLORS FOR STYLE MODES/DARK MODE etc...
+*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* FIGURE A CDN SOLUTION FOR IMAGES AS BACKGROUND OR NICER CSS */
+.polka-dot-background {
+  background-color: #9a9ac7;
+  opacity: 0.3;
+  background-image: linear-gradient(#aaaaaa 0.7000000000000001px, transparent 0.7000000000000001px),
+    linear-gradient(to right, #aaaaaa 0.7000000000000001px, #6e6e6e 0.7000000000000001px);
+  background-size: 14px 14px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
 }
