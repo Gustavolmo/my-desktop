@@ -1,9 +1,9 @@
 'use client';
-import { useCursorState } from '@/global-states/cursorPoint';
+import { useCursorState } from '@/global-states/cursor-state';
 import { useEffect } from 'react';
 
 export default function GlobalAppListeners() {
-  const { /* x, y, */ setX, setY } = useCursorState();
+  const { setX, setY } = useCursorState();
 
   useEffect(() => {
     const handleWindowPosition = (e: MouseEvent) => {
@@ -17,10 +17,6 @@ export default function GlobalAppListeners() {
     return () => document.removeEventListener('pointermove', handleWindowPosition);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   console.log(x, y);
-  // }, [x, y]);
 
   return <></>;
 }
