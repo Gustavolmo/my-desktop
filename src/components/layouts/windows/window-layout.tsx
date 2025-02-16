@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react';
 import { StoreApi, UseBoundStore } from 'zustand';
 import { AppStore, ResizeState } from './window-app-types';
 
-const WIN_MIN_WIDTH = 200;
+const WIN_MIN_WIDTH = 240;
 const WIN_MIN_HEIGHT = 120;
 
 type StoreProp = {
@@ -131,6 +131,7 @@ export default function WindowLayout({ children, useAppStore }: StoreProp) {
   return (
     <>
       <div
+        id="window-layout"
         ref={windowRef}
         style={{
           top: `${winCoord.pointY}px`,
@@ -161,14 +162,22 @@ export default function WindowLayout({ children, useAppStore }: StoreProp) {
             onDoubleClick={maximizeWindow}
             className="w-full h-8"
           ></div>
-          <div className="flex justify-between gap-6 px-4">
-            <button onClick={minimizeWindow}>{iconWinMinimize()}</button>
+          <div className="flex justify-between px-1">
+            <button className="hover:bg-gray-100 hover:bg-opacity-20 px-5" onClick={minimizeWindow}>
+              {iconWinMinimize()}
+            </button>
             {winVisualState === 'maximized' ? (
-              <button onClick={demaximizeWindow}>{iconWinDemaximize()}</button>
+              <button className="hover:bg-gray-100 hover:bg-opacity-20 px-5" onClick={demaximizeWindow}>
+                {iconWinDemaximize()}
+              </button>
             ) : (
-              <button onClick={maximizeWindow}>{iconWinMaximize()}</button>
+              <button className="hover:bg-gray-100 hover:bg-opacity-20 px-5" onClick={maximizeWindow}>
+                {iconWinMaximize()}
+              </button>
             )}
-            <button onClick={closeWindow}>{iconWinClose()}</button>
+            <button className="hover:bg-red-500 hover:bg-opacity-20 px-5" onClick={closeWindow}>
+              {iconWinClose()}
+            </button>
           </div>
         </nav>
 
