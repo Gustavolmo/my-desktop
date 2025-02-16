@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 /* 
+GUSTAVO:
 DEFINE BASE COLORS FOR STYLE MODES/DARK MODE etc...
 */
 
-/* FIGURE A CDN SOLUTION FOR IMAGES AS BACKGROUND OR NICER CSS */
+/*GUTAVO: Use next server side for a pseudo cdn for images */
 .polka-dot-background {
   background-color: #9a9ac7;
   opacity: 0.3;
