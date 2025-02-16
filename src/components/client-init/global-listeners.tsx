@@ -1,5 +1,5 @@
 'use client';
-import { useCursorState } from '@/states/cursorPoint';
+import { useCursorState } from '@/global-states/cursorPoint';
 import { useEffect } from 'react';
 
 export default function GlobalAppListeners() {

@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
+// GUSTAVO - Needs an associated store and button
+
 import {
   iconWinClose,
   iconWinDemaximize,
   iconWinMaximize,
   iconWinMinimize,
 } from '@/assets/svg-win-icons';
-import { useCursorState } from '@/states/cursorPoint';
+import { useCursorState } from '@/global-states/cursorPoint';
 import { useEffect, useRef, useState } from 'react';
 
 type Coord = { pointX: number; pointY: number };
@@ -16,6 +18,10 @@ type WinVisualState = 'closed' | 'maximized' | 'demaximized' | 'minimized';
 
 const WIN_MIN_WIDTH = 200;
 const WIN_MIN_HEIGHT = 120;
+
+type StoreProp = {
+  useStore: AppStore;
+};
 
 export default function AppWindow() {
   const { x, y } = useCursorState();

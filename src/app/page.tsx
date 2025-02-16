@@ -1,6 +1,6 @@
 import AppsContainer from '@/components/apps-container/apps-container';
 import GlobalAppListeners from '@/components/client-init/global-listeners';
-import AppWindow from '@/components/windows/window';
+import AppWindow from '@/components/windows/app-window';
 
 export default function Home() {
   return (
